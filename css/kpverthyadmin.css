@@ -1,0 +1,183 @@
+/* Admin dashboard: small additions on top of css/styles.css (same design language) */
+body.adm{padding-bottom:40px}
+.ah{position:sticky;top:0;z-index:40;background:rgba(22,61,50,.96);color:#fff;border-radius:0 0 28px 28px;box-shadow:0 12px 30px #0000003a;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.ah .in{max-width:1180px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.ah .brand small{font-family:Manrope,system-ui,sans-serif;font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-left:2px}
+.ah .ar{display:flex;align-items:center;gap:12px}
+.ah .ar .sub{display:none}
+@media(min-width:760px){.ah .ar .sub{display:inline}}
+.alog{min-height:100vh;display:grid;place-items:center;padding:20px}
+.alog .au{width:100%}
+.lst{display:grid;gap:12px}
+.ph3{display:flex;gap:8px;margin-bottom:12px;overflow-x:auto}
+.ph3>div{flex:none;width:96px;aspect-ratio:3/4;border-radius:14px;background-size:cover;background-position:center;border:2px solid #fff;box-shadow:0 6px 14px #0002}
+.bk .im{background-color:#e8e5da}
+dialog textarea{margin-top:8px}
+
+/* side menu */
+.ash{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:0}
+.amn{padding:28px 20px 40px;min-width:0}
+.amn h2{margin-bottom:18px}
+.asn{display:flex;flex-direction:column;gap:4px}
+.asd button{display:flex;align-items:center;gap:12px;width:100%;border:0;background:none;padding:12px 14px;border-radius:14px;font-weight:700;font-size:.95rem;color:#4b524d;cursor:pointer;text-align:left;transition:background .2s,color .2s}
+.asd button span{flex:1}
+.asd button:hover{background:rgba(22,61,50,.07)}
+.asd button.on{background:var(--green);color:#fff;box-shadow:0 8px 18px #163d3233}
+.asd em{font-style:normal;font-size:.75rem;font-weight:700;opacity:.6}
+.asd .abd{position:static;border:0;height:auto;display:inline-block;font-style:normal;font-size:.72rem;font-weight:800;background:var(--gold);color:#1b1b17;border-radius:99px;padding:2px 8px}
+.amb{display:inline-grid;place-items:center;border:0;background:none;color:#fff;padding:4px;margin-right:4px;cursor:pointer}
+.stc{cursor:pointer;text-align:left;font:inherit;color:inherit}
+.bk .row{flex-wrap:wrap}
+@media(max-width:899px){
+  .asd{position:fixed;z-index:60;top:0;left:0;bottom:0;width:270px;max-width:82vw;background:#fff;padding:78px 12px 20px;transform:translateX(-102%);transition:transform .28s;box-shadow:12px 0 40px #0003;overflow-y:auto}
+  .ask{position:fixed;inset:0;z-index:55;background:#0007;opacity:0;pointer-events:none;transition:opacity .28s}
+  .ash.open .asd{transform:none}.ash.open .ask{opacity:1;pointer-events:auto}
+}
+@media(min-width:900px){
+  .ash{grid-template-columns:250px 1fr;gap:10px}
+  .amb,.ask{display:none}
+  .asd{position:sticky;top:84px;align-self:start;padding:28px 0 0 16px}
+  .amn{padding:28px 20px 40px 24px}
+}
+
+.hp{display:block;font-weight:700;font-size:.9rem}.hp select{margin-top:6px;width:100%;max-width:420px}
+.hpv{position:relative;display:block;width:100%;max-width:360px;aspect-ratio:4/3.2;border-radius:20px;border:2px dashed var(--gold);background:#efeadd center/cover;cursor:pointer;overflow:hidden}.hpv span{position:absolute;left:0;right:0;bottom:0;padding:8px;text-align:center;font-size:.85rem;font-weight:700;background:#163d32cc;color:#fff}
+.hp{flex-direction:column;align-items:flex-start}
+
+/* ===== Desktop fixes ===== */
+/* styles.css reserves 84px on the left of <body> for the visitor site's side menu: the admin has its own menu, so remove it (this pushed the header and page off-center) */
+body.adm{padding-left:0 !important;padding-bottom:40px !important}
+@media(min-width:900px){
+  .ah{border-radius:0 0 28px 28px}
+  .ah .in{max-width:1360px;padding:14px 36px}
+  .ash{max-width:1360px;grid-template-columns:260px minmax(0,1fr);gap:18px;padding:0 12px}
+  /* menu has 11 items: keep it inside the screen and scrollable on short windows */
+  .asd{top:88px;max-height:calc(100vh - 100px);overflow-y:auto;padding:22px 6px 16px 10px;scrollbar-width:thin}
+  .amn{padding:26px 14px 40px 8px}
+}
+/* lists use the wide screen: cards sit in columns instead of one very long row */
+@media(min-width:1180px){
+  .lst{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+}
+@media(min-width:1700px){
+  .lst{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+.hp{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.hp select{margin-top:0}
+
+/* Bugs */
+.bug-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.bug-stats div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px;box-shadow:0 6px 18px #1b3a2d0d}
+.bug-stats b{display:block;font-size:1.6rem;line-height:1.1;color:var(--green)}.bug-stats .w b{color:#7a5a12}.bug-stats .g b{color:#14523a}
+.bug-stats span{font-size:.78rem;font-weight:600;color:var(--muted)}
+.bug-grid{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:980px){.bug-grid{grid-template-columns:1fr 1fr}}
+.bug{background:#fff;border:1px solid var(--line);border-left:4px solid #d9b14a;border-radius:16px;padding:16px;box-shadow:0 8px 22px #1b3a2d0f;display:flex;flex-direction:column;gap:12px;min-width:0}
+.bug.is-done{border-left-color:#4c9a78}
+.bug header{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.bug header time{margin-left:auto}
+.bug-id{font:700 .78rem ui-monospace,Menlo,monospace;color:var(--muted);background:#f4f4f1;padding:3px 8px;border-radius:8px}
+.bug small{display:block;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.bug-who{display:flex;align-items:center;gap:10px;min-width:0}
+.bug-who>div{min-width:0}.bug-who a{color:var(--green);font-weight:700;word-break:break-all}
+.bug-av{flex:none;width:36px;height:36px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:800}
+.bug-msg{background:#f8f7f3;border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.bug-msg p{margin:0;white-space:pre-wrap;word-break:break-word;line-height:1.5}
+.bug-meta{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0;font-size:.8rem}
+.bug-meta div{display:contents}.bug-meta dt{font-weight:700;color:var(--muted)}
+.bug-meta dd{margin:0;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.bug .bug-act{display:flex;gap:8px;flex-wrap:wrap;padding-top:12px;border-top:1px solid var(--line)}
+.bug .bug-act .btn{text-decoration:none;display:inline-block}
+
+/* ===== Device compatibility ===== */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+body{overflow-x:clip}
+.alog{min-height:100vh;min-height:100dvh}
+@media(min-width:900px){.asd{max-height:calc(100vh - 100px);max-height:calc(100dvh - 100px)}}
+button,a,select,[role=button]{touch-action:manipulation}
+input,select,textarea{font-size:max(16px,1em)}
+
+/* ===== Bookings + Owner payments ===== */
+.mbar{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between;margin-bottom:14px}
+.mbar p{margin:0;max-width:640px}.mbar .row{margin:0}
+.mstg{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.mst small{color:var(--muted);font-size:.72rem;margin-top:2px}
+.mst.warn{border-color:#f0d58a}.mst.warn b{color:#7a5a12}
+.mfl{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;margin:0 0 14px}
+.mf{display:flex;flex-direction:column;gap:4px;font-size:.72rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.mf input,.mf select{font:600 .9rem Manrope,system-ui,sans-serif;text-transform:none;letter-spacing:0;padding:9px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);min-height:40px;max-width:200px}
+.hchb{border:1px solid #e3e3e3;background:#fff;border-radius:99px;padding:9px 16px;font-weight:600;font-size:.88rem;cursor:pointer}.hchb.on{background:var(--green);border-color:var(--green);color:#fff}
+.mtabs{margin-bottom:16px}
+.mtw{background:#fff;border:1px solid var(--line);border-radius:18px;overflow-x:auto;box-shadow:0 8px 22px #1b3a2d0f}
+.mt{width:100%;border-collapse:collapse;font-size:.88rem}
+.mt th{text-align:left;font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:12px 14px;background:#f8f7f3;border-bottom:1px solid var(--line);white-space:nowrap}
+.mt td{padding:12px 14px;border-bottom:1px solid #f0eee6;vertical-align:top}
+.mt tbody tr:last-child td{border-bottom:0}
+.mt tbody tr[data-m=bview]{cursor:pointer}.mt tbody tr[data-m=bview]:hover{background:#faf9f4}
+.mt .sub{font-size:.76rem}.mgo{white-space:nowrap;text-align:right}
+.mref{font-family:ui-monospace,Menlo,monospace;font-size:.82rem;color:var(--green)}
+.mdue{color:#7a5a12}.mneg{color:#8a2f25}
+.mpg{display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 4px}
+.mcm{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:flex-end;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin-bottom:14px}
+.mcm .mf input{width:110px}.mcm .sub{flex:1 1 260px}
+.mdt h4{margin:18px 0 6px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.mhd{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.mkv{display:grid;grid-template-columns:1fr;gap:6px 18px;margin:0;font-size:.9rem}
+.mkv div{display:grid;grid-template-columns:150px 1fr;gap:10px;padding:6px 0;border-bottom:1px solid #f0eee6}
+.mkv dt{font-weight:700;color:var(--muted)}.mkv dd{margin:0;min-width:0;word-break:break-word}
+.mkv code{font-size:.78rem;background:#f4f4f1;padding:2px 6px;border-radius:6px}
+.mact{margin-top:18px}
+.mcp{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0}
+.mcopy{border:1px dashed var(--gold);background:#fffaf0;border-radius:10px;padding:6px 10px;font:600 .8rem Manrope,system-ui,sans-serif;cursor:pointer}
+.mpay .two,#bkf .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:620px){.mpay .two,#bkf .two{grid-template-columns:1fr}.mkv div{grid-template-columns:1fr;gap:2px}}
+/* phones: table rows become cards */
+@media(max-width:760px){
+  .mtw{background:none;border:0;box-shadow:none;overflow:visible}
+  .mt,.mt tbody,.mt tr,.mt td{display:block;width:100%}.mt thead{display:none}
+  .mt tr{background:#fff;border:1px solid var(--line);border-radius:16px;padding:8px 6px;margin-bottom:10px;box-shadow:0 6px 16px #1b3a2d0d}
+  .mt td{border:0;padding:6px 12px;display:flex;justify-content:space-between;gap:14px;text-align:right}
+  .mt td::before{content:attr(data-l);font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);text-align:left;flex:none;padding-top:2px}
+  .mt td.mgo{justify-content:flex-end;gap:8px}.mt td.mgo::before{content:none}
+  .mfl .mf,.mf input,.mf select{max-width:none;width:100%}.mfl .mf{flex:1 1 140px}
+}
+.mt .tag{white-space:nowrap}
+.mt td,.mt th{padding-left:10px;padding-right:10px}
+@media(min-width:761px){.mt td.mgo .btn{display:block;width:100%;margin:0 0 6px}.mt td.mgo .btn:last-child{margin-bottom:0}}
+/* Pricing */
+.prbox{margin-bottom:18px}
+.pin{width:100px;padding:8px 10px;border:1px solid var(--line);border-radius:10px;font:600 .9rem Manrope,system-ui,sans-serif;min-height:40px}
+.mt tr.prdef .pin{background:#faf9f4;color:#7b7b70}
+.prx{min-width:130px}
+@media(max-width:760px){.pin{width:120px}}
+
+input,select,textarea{font-size:16px!important}
+
+/* ===== Menu fixes (mobile drawer, laptop, desktop) ===== */
+.asx{display:none}
+@media(max-width:899px){
+  .asd{padding:0 12px 24px;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+  .asx{display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:2;background:#fff;padding:16px 6px 10px;margin-bottom:6px;border-bottom:1px solid var(--line)}
+  .asx b{font-size:1.05rem;color:var(--green)}
+  .asx button{width:auto;display:grid;place-items:center;width:38px;height:38px;padding:0;border-radius:50%;background:rgba(22,61,50,.08);font-size:1.5rem;line-height:1;color:var(--green)}
+  .asd button{padding:13px 14px}
+}
+@media(min-width:900px){
+  .asd{overflow-y:auto;scrollbar-width:thin;scrollbar-color:#c9cfca transparent}
+  .asd::-webkit-scrollbar{width:6px}.asd::-webkit-scrollbar-thumb{background:#c9cfca;border-radius:6px}
+}
+/* 19 menu items: tighten on laptops / short windows so most of them fit without scrolling */
+@media(min-width:900px) and (max-height:900px){
+  .asd button{padding:8px 12px;font-size:.9rem;gap:10px;border-radius:12px}
+  .asn{gap:2px}
+}
+@media(min-width:900px) and (max-height:760px){
+  .asd button{padding:6px 12px;font-size:.86rem}
+}
+
+/* mobile: page scrolls normally; it is only locked while the menu drawer is open */
+body.navlock{overflow:hidden}
+@media(max-width:899px){
+  html,body{overflow-y:auto}
+  .asd{overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;height:100%;box-sizing:border-box}
+}

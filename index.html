@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%23163D32%27/%3E%3C/svg%3E">
+<title>Verdane — Resorts & Stays</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/loading.jpg">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<linearGradient id="fgl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a8a8e" stop-opacity=".62"/><stop offset=".55" stop-color="#4a4a4d" stop-opacity=".82"/><stop offset="1" stop-color="#1c1c1e" stop-opacity=".95"/></linearGradient>
+<linearGradient id="fsh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<filter id="fbl" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.1"/></filter>
+<clipPath id="fcp"><path id="fpath" d="M5 21.5Q5 19.5 7 19.5H17.2L21.2 23.2H41Q43 23.2 43 25.2V37.5Q43 40 40.5 40H7.5Q5 40 5 37.5Z"/></clipPath>
+<symbol id="folder" viewBox="0 0 48 48">
+<rect x="9" y="7" width="30" height="31" rx="5.5" fill="#2b2b2d" stroke="#ffffff40" stroke-width=".6"/>
+<g transform="rotate(-8 19 20)"><rect x="11" y="10" width="17" height="21" rx="2.6" fill="#f6f6f7"/><rect x="14" y="14.5" width="11" height="1.9" rx=".95" fill="#d3d3d6"/><rect x="14" y="18.5" width="7" height="1.6" rx=".8" fill="#dedee0"/></g>
+<g transform="rotate(3 26 20)"><rect x="21" y="10.5" width="11" height="20" rx="2.6" fill="#ececee"/><rect x="23.5" y="14.5" width="6" height="1.6" rx=".8" fill="#d0d0d3"/></g>
+<g transform="rotate(7 33 22)"><rect x="29" y="13.5" width="8.5" height="17" rx="2.4" fill="#f1f1f2"/><rect x="31" y="18" width="4.5" height="1.5" rx=".75" fill="#d4d4d7"/></g>
+<use href="#fpath" fill="url(#fgl)"/>
+<g clip-path="url(#fcp)"><g filter="url(#fbl)" opacity=".5"><rect x="12" y="25.5" width="10" height="1.6" rx=".8" fill="#e4e4e6"/><rect x="12" y="29" width="10" height="1.6" rx=".8" fill="#e4e4e6"/><rect x="25" y="25.5" width="10" height="1.6" rx=".8" fill="#e4e4e6"/><rect x="25" y="29" width="8" height="1.6" rx=".8" fill="#e4e4e6"/><rect x="14" y="32.5" width="18" height="1.6" rx=".8" fill="#e4e4e6"/></g><rect x="5" y="19.5" width="38" height="9" fill="url(#fsh)" opacity=".5"/></g>
+<use href="#fpath" fill="none" stroke="#ffffff59" stroke-width=".6"/>
+</symbol></defs></svg>
+<div id="splash" role="status" aria-live="polite"><div class="spb"></div><div class="spl"><p class="spw">Welcome to</p><div class="spn">Verdane</div><p class="spd">Resorts, stays &amp; activities in every district</p><div class="spbar"><i></i></div><p class="spt">Finding your location…</p></div></div>
+<header class="top"><div class="tw"><div class="brand" role="img" aria-label="Verdane"><span class="lg"></span></div><button class="loc" aria-label="Choose location" onclick="locPicker()"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span id="lc" class="skb">Detecting…</span><svg class="cv" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></button><button class="sv" aria-label="Saved resorts" onclick="showSaved()"><svg class="fi" viewBox="0 0 48 48"><use href="#folder"/></svg><span class="sb" id="sb"></span></button></div></header>
+<nav aria-label="Main">
+ <div class="pill">
+  <button data-p="home" class="hm on" aria-label="Home"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span class="lb">Home</span></button>
+  <button data-p="resorts" aria-label="Resorts"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><span class="lb">Resorts</span></button>
+  <button data-p="activities" aria-label="Activities"><svg viewBox="0 0 24 24"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 11v2M13 17v2"/></svg><span class="lb">Activities</span></button>
+  <button data-p="profile" aria-label="Profile"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span class="lb">Profile</span></button>
+ </div>
+ <button data-p="bookings" class="circ" aria-label="Bookings"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span class="bd" id="bd"></span></button>
+</nav>
+<main>
+<div id="home" class="page on"><div class="wrap" style="padding-top:110px" aria-busy="true" aria-label="Loading"><div class="skb" style="height:48px;border-radius:99px;margin-bottom:22px"></div><div class="skb" style="height:22px;width:40%;margin-bottom:16px"></div><div class="grid"><div class="card"><div class="im skb"></div><div class="b" style="padding:12px 16px 18px"><div class="skb" style="height:16px;width:70%"></div><div class="skb" style="height:12px;width:45%;margin-top:10px"></div><div class="skb" style="height:14px;width:30%;margin-top:14px"></div></div></div><div class="card"><div class="im skb"></div><div class="b" style="padding:12px 16px 18px"><div class="skb" style="height:16px;width:70%"></div><div class="skb" style="height:12px;width:45%;margin-top:10px"></div><div class="skb" style="height:14px;width:30%;margin-top:14px"></div></div></div><div class="card"><div class="im skb"></div><div class="b" style="padding:12px 16px 18px"><div class="skb" style="height:16px;width:70%"></div><div class="skb" style="height:12px;width:45%;margin-top:10px"></div><div class="skb" style="height:14px;width:30%;margin-top:14px"></div></div></div><div class="card"><div class="im skb"></div><div class="b" style="padding:12px 16px 18px"><div class="skb" style="height:16px;width:70%"></div><div class="skb" style="height:12px;width:45%;margin-top:10px"></div><div class="skb" style="height:14px;width:30%;margin-top:14px"></div></div></div><div class="card"><div class="im skb"></div><div class="b" style="padding:12px 16px 18px"><div class="skb" style="height:16px;width:70%"></div><div class="skb" style="height:12px;width:45%;margin-top:10px"></div><div class="skb" style="height:14px;width:30%;margin-top:14px"></div></div></div><div class="card"><div class="im skb"></div><div class="b" style="padding:12px 16px 18px"><div class="skb" style="height:16px;width:70%"></div><div class="skb" style="height:12px;width:45%;margin-top:10px"></div><div class="skb" style="height:14px;width:30%;margin-top:14px"></div></div></div></div></div></div><div id="resorts" class="page"></div><div id="activities" class="page"></div><div id="detail" class="page"></div><div id="place" class="page"></div><div id="host" class="page"></div><div id="alldest" class="page"></div><div id="allprog" class="page"></div><div id="checkout" class="page"></div><div id="dates" class="page"></div><div id="bookings" class="page"></div><div id="allres" class="page"></div><div id="about" class="page"></div><div id="terms" class="page"></div><div id="privacy" class="page"></div>
+<div id="profile" class="page"></div>
+</main>
+<footer><div class="wrap"><b>Verdane</b> — resorts, stays and activities<p class="sub" style="color:#b9cbc3;margin:8px 0 14px">Discover and book stays and activities across districts.</p>
+<a onclick="go('about')" role="link" tabindex="0">About</a><a data-wa href="#" target="_blank" rel="noopener noreferrer">Contact</a><a onclick="go('terms')" role="link" tabindex="0">Terms</a><a onclick="go('privacy')" role="link" tabindex="0">Privacy</a><a data-bug>Report a bug</a></div></footer>
+<dialog id="dlg"></dialog><div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+<script src="js/config.js"></script>
+<script src="js/cloud.js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/api.js"></script>
+<script src="js/util.js"></script>
+<script src="js/state.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/pages/home.js"></script>
+<script src="js/pages/resorts.js"></script>
+<script src="js/pages/booking.js"></script>
+<script src="js/pages/bookings.js"></script>
+<script src="js/pages/ticket.js"></script>
+<script src="js/pages/payments.js"></script>
+<script src="js/pages/profile.js"></script>
+<script src="js/pages/activities.js"></script>
+<script src="js/pages/detail.js"></script>
+<script src="js/pages/checkout.js"></script>
+<script src="js/pages/destinations.js"></script>
+<script src="js/pages/programs.js"></script>
+<script src="js/pages/place.js"></script>
+<script src="js/pages/host.js"></script>
+<script src="js/pages/dates.js"></script>
+<script src="js/pages/info.js"></script>
+<script src="js/location.js"></script>
+<script src="js/services.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

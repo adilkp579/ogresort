@@ -1,0 +1,9 @@
+# Cloudflare Pages security headers. Replace media.example.com and the API host with yours, then check the
+# browser console for "Refused to ..." messages after deploying.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://checkout.razorpay.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https://media.example.com https://*.supabase.co https://*.razorpay.com; connect-src 'self' data: blob: https://*.supabase.co https://verdane-api.YOUR-SUBDOMAIN.workers.dev https://api.razorpay.com https://lumberjack.razorpay.com; frame-src https://api.razorpay.com https://checkout.razorpay.com https://challenges.cloudflare.com https://www.youtube.com https://www.youtube-nocookie.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self'
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(self), camera=(), microphone=(), payment=(self "https://checkout.razorpay.com" "https://api.razorpay.com")
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
